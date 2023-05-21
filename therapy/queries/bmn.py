@@ -41,9 +41,7 @@ class BMNRepository:
                             image_2,
                             date_watched)
                         VALUES
-                            (
-                                %s, %s, %s, %s, %s
-                                )
+                            (%s, %s, %s, %s, %s)
                         RETURNING id;
                         """,
                         [
@@ -53,11 +51,6 @@ class BMNRepository:
                             bmn.image_2,
                             bmn.date_watched,
                         ],
-                        print([bmn.title,
-                            bmn.lengthy_description,
-                            bmn.image_1,
-                            bmn.image_2,
-                            bmn.date_watched])
                     )
                     id = result.fetchone()[0]
                     old_data = bmn.dict()
@@ -139,6 +132,7 @@ class BMNRepository:
                             bmn.image_1,
                             bmn.image_2,
                             bmn.date_watched,
+                            bmn_id
                         ],
                     )
                     old_data = bmn.dict()

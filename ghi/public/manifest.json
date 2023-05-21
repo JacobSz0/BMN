@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Bad Movie Night Database",
+  "name": "The official database for bad movie night",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,7 +1,7 @@
 const Foot = () => {
   return(
     <>
-      <footer className="footer">
+      <footer className="footer nav-bar-green">
         <footer className="bg-success bg-gradient" style={{textAlign: "center", padding: "0px"}}>
             <div style={{padding: "7px"}}></div>
             <div>

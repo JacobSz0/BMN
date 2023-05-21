@@ -5,6 +5,7 @@ import Nav from "./Nav.js";
 import { useToken, AuthProvider } from "./Authentication.js";
 import MainPage from "./MainPage.js";
 import AccountLoginForm from "./AccountLoginForm.js";
+import BMNList from "./BMNList"
 import Foot from "./Foot"
 import React from 'react';
 
@@ -28,6 +29,7 @@ function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="account" element={<AccountSignupForm />} />
             <Route path="/login" element={<AccountLoginForm />} />
+            <Route path="/bmn_list" element={<BMNList />} />
           </Routes>
         </div>
         <Foot/>

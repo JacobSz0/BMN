@@ -20,7 +20,7 @@ steps = [
         CREATE TABLE bmn (
             id SERIAL PRIMARY KEY NOT NULL,
             title VARCHAR(100) NOT NULL,
-            lengthy_description VARCHAR(2000) NOT NULL,
+            lengthy_description VARCHAR(200) NOT NULL,
             image_1 VARCHAR(200),
             image_2 VARCHAR(200),
             date_watched VARCHAR(100)
