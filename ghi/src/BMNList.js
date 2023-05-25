@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./BMNList.css"
 
 function BMNList() {
 
   const [BMNData, setBMNData] = useState([]);
-
+  const navigate = useNavigate();
 
 
 
@@ -19,6 +20,10 @@ function BMNList() {
       }
   }
 
+  function Deet(id){
+    navigate(`/bmn_deets/${id}`)
+  }
+
   useEffect (() => {
     getData()
   },[])
@@ -29,8 +34,8 @@ function BMNList() {
     <div>
       {BMNData.map((i) => {
         return(
-          <div className="card" key={i.id}>
-            <img src={i.image_1} alt="IMG"></img>
+          <div onClick={() => Deet(i.id)} className="card" key={i.id}>
+            <img className="list-img" src={i.image_1} alt="IMG"></img>
             <div className="container">
             <h4><b>{i.title}</b></h4>
             <p>{i.date_watched}</p>

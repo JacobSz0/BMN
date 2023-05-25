@@ -11,6 +11,7 @@
   color: white
 }
 
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,6 +23,9 @@
   color: white;
 }
 
+.contain{
+  padding: 3%;
+}
 
 .my-card {
   margin-left: auto;
@@ -85,4 +89,16 @@ footer a:hover {
   color: #000000;
   font-size: 22px;
   color: inherit;
+}
+
+.img-size{
+  width: 350px;
+  height: auto;
+}
+
+.ib{
+  display: inline-block;
+}
+.pad{
+  padding: 5px;
 }

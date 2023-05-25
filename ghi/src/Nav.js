@@ -22,33 +22,22 @@ function Nav() {
         <NavLink className="nav-main" to="/">
           Main
         </NavLink>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <NavLink className="nav-redirect" to="/bmn_list">
+          Movie List
+        </NavLink>
+        <NavLink className="nav-redirect" to="/hall_of_memes">
+          Hall of Memes
+        </NavLink>
             {!isLoggedIn && (
-              <>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/login">
-                    Login
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/account">
-                    Sign Up
-                  </NavLink>
-                </li>
-              </>
+              <NavLink className="nav-redirect" to="/login">
+                Login
+              </NavLink>
             )}
             {isLoggedIn && (
-              <>
-                <li className="nav-item">
-                  <NavLink className="nav-link" onClick={logout}>
-                    Logout
-                  </NavLink>
-                </li>
-              </>
+              <NavLink className="nav-redirect" onClick={logout}>
+                Logout
+              </NavLink>
             )}
-          </ul>
-        </div>
       </div>
     </nav>
   );
