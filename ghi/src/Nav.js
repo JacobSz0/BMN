@@ -34,9 +34,14 @@ function Nav() {
               </NavLink>
             )}
             {isLoggedIn && (
-              <NavLink className="nav-redirect" onClick={logout}>
-                Logout
-              </NavLink>
+              <>
+                <NavLink className="nav-redirect" to="/create">
+                  New Entry
+                </NavLink>
+                <NavLink className="nav-redirect" onClick={logout}>
+                  Logout
+                </NavLink>
+              </>
             )}
       </div>
     </nav>

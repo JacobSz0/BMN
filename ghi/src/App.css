@@ -102,3 +102,65 @@ footer a:hover {
 .pad{
   padding: 5px;
 }
+
+.background-grey{
+  background-color: gray;
+}
+
+.glass-red{
+	/* background styles */
+	position: relative;
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: rgb(128, 0, 0); /*for compatibility with older browsers*/
+	background-image: linear-gradient(rgb(128, 0, 0),rgb(238, 144, 144));
+
+	/* text styles */
+	text-decoration: none;
+	color: #fff;
+	font-size: 15px;
+	font-family: sans-serif;
+	font-weight: 100;
+
+  box-shadow: 0px 1px 4px -2px #333;
+  text-shadow: 0px -1px #333;
+}
+
+
+.glass-red:hover{
+	background: linear-gradient(rgb(119, 0, 0),rgb(255, 0, 0));
+}
+
+.glass-orange{
+	/* background styles */
+	position: relative;
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: rgb(116, 79, 0); /*for compatibility with older browsers*/
+	background-image: linear-gradient(rgb(107, 69, 0),rgb(193, 148, 0));
+
+	/* text styles */
+	text-decoration: none;
+	color: #fff;
+	font-size: 15px;
+	font-family: sans-serif;
+	font-weight: 100;
+
+  box-shadow: 0px 1px 4px -2px #333;
+  text-shadow: 0px -1px #333;
+}
+
+
+.glass-orange:hover{
+	background: linear-gradient(rgb(145, 126, 0),rgb(255, 196, 0));
+}
+
+.glass:after{
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: calc(100% - 4px);
+	height: 50%;
+	background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+}

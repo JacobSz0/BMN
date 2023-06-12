@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./BMNList.css"
 
 function BMNList() {
 
   const [BMNData, setBMNData] = useState([]);
+  const [displayData, setDisplayData] = useState([])
+  const [option, setOption] = useState("All")
   const navigate = useNavigate();
-
-
-
 
 
   async function getData() {
@@ -17,8 +16,38 @@ function BMNList() {
         var data = await response.json();
         console.log(data)
         setBMNData(data)
+        setDisplayData(data)
       }
   }
+
+  const handlePerChange = (event) => {
+    const store = event.target.value;
+    setOption(store);
+    var copyBMN=[...BMNData]
+    var newData=[]
+    if (store==="All"){
+      setDisplayData(BMNData)
+    }
+    if (store==="Watched"){
+      for (var i of copyBMN){
+        if (i.date_watched!==""){
+          newData.push(i)
+        }
+      }
+      console.log(newData)
+      setDisplayData(newData)
+    }
+    if (store==="Unwatched"){
+      for (var i of copyBMN){
+        if (i.date_watched===""){
+          newData.push(i)
+        }
+      }
+      console.log(newData)
+      setDisplayData(newData)
+    }
+  };
+
 
   function Deet(id){
     navigate(`/bmn_deets/${id}`)
@@ -32,7 +61,15 @@ function BMNList() {
 
   return (
     <div>
-      {BMNData.map((i) => {
+      <div className="background-grey">
+        <p>Search Parameters</p>
+        <select value={option} onChange={handlePerChange}>
+          <option value={"All"}>All</option>
+          <option value={"Watched"}>Watched</option>
+          <option value={"Unwatched"}>Unwatched</option>
+        </select>
+      </div>
+      {displayData.map((i) => {
         return(
           <div onClick={() => Deet(i.id)} className="card" key={i.id}>
             <img className="list-img" src={i.image_1} alt="IMG"></img>
